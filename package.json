@@ -1,0 +1,30 @@
+{
+  "name": "artifacia",
+  "version": "0.1.0",
+  "description": "A javascript client to integrate visual recommendation feature from Artifacia API",
+  "main": "artifacia.js",
+  "dependencies": {
+    "request": "^2.73.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artifacia/artifacia-client-js.git"
+  },
+  "keywords": [
+    "artifacia",
+    "recommendation",
+    "getrecommendation",
+    "recommendation",
+    "api"
+  ],
+  "author": "Ashish Kumar <erashish122@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/artifacia/artifacia-client-js/issues"
+  },
+  "homepage": "https://github.com/artifacia/artifacia-client-js#readme"
+}
