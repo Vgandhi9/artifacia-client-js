@@ -29,7 +29,7 @@ client.artifacia(username, password);
 ```
 
 ### Creating your index
-The first step is to create a index of the items that you would like to store in our databases to perform search against. If you don't have data ready right now you can quickly get started with our [sample data](https://github.com/artifacia/artifacia-client-python/blob/master/sample_data.json). Once the data is stored and indexed we will inform you shortly.
+The first step is to create a index of the items that you would like to store in our databases to perform search against. If you don't have data ready right now you can quickly get started with our [sample data](https://github.com/artifacia/artifacia-client-js/blob/master/sample_data.json). Once the data is stored and indexed we will inform you shortly.
 
 ```javascript
 var sample_data = requrie("./sample_data.json");
