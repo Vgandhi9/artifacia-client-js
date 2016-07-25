@@ -41,8 +41,6 @@ Once you receive a notification form us about the status of the indexed data, yo
 You can search for a product ID indexed in the sample data you inserted/uploaded.
 
 ```javascript
-var result_resp;
 var sample_prod_id = 2709;
-client.get_visual_recommendation(sample_prod_id,function(result){result_resp = result});
-console.log(result_resp);
+client.get_visual_recommendation(sample_prod_id,function(result){console.log(result)});
 ```
