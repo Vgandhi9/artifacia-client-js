@@ -6,7 +6,7 @@ var request = require('request');
 exports.artifacia = function(username, password, callback){
 
 	var ret;
-	exports.upload_user_data = function(data,callback){
+	exports.upload_user_purchased_items = function(user_id,data,callback){
 
 		var baseUrl = 'http://api.artifacia.com/v1/users/'+user_id+'/purchased_items';
 		var headers = {
