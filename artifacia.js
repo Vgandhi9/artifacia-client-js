@@ -8,9 +8,38 @@ exports.artifacia = function(username, password, callback){
 	var ret;
 	console.log(username);
 	console.log(password);
-	exports.upload_user_data = function(data,callback){
+	exports.upload_user_purchased_items = function(user_id, data, callback){
 
-		var baseUrl = 'http://api.artifacia.com/v1/users';
+		var baseUrl = 'http://api.artifacia.com/v1/users/'+user_id+'/purchased_items';
+		var headers = {
+			'Content-Type' : 'application/json'
+		};
+
+		var authorise = {
+			user: username,
+			pass: password
+		};
+
+		var options = {
+			url: baseUrl,
+			headers: headers,
+			method: 'POST',
+			json: true,
+			body: data,
+			auth: authorise
+		};
+		request(options, function (error, response, body) {
+			// console.log('Error: ', error);
+			// console.log('Status: ', response.statusCode);
+			//  console.log(body);
+			ret = body;
+			callback(ret)
+		});
+	}
+
+	exports.upload_user_viewed_items = function(user_id, data, callback){
+
+		var baseUrl = 'http://api.artifacia.com/v1/users/'+user_id+'/viewed_items';
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -119,7 +148,7 @@ exports.artifacia = function(username, password, callback){
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
 			// console.log('Status: ', response.statusCode);
-			// console.log(body);
+			console.log(body);
 			ret = body;
 			callback(ret)
 		});
@@ -158,7 +187,7 @@ exports.artifacia = function(username, password, callback){
 
 		console.log(prod_id);
 
-		var baseUrl = 'http://api.artifacia.com/v1/recommendation/user/'+user_id;
+		var baseUrl = 'http://api.artifacia.com/v1/recommendation/users/'+user_id;
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
