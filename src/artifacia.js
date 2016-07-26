@@ -6,9 +6,7 @@ var request = require('request');
 exports.artifacia = function(username, password, callback){
 
 	var ret;
-	console.log(username);
-	console.log(password);
-	exports.upload_user_purchased_items = function(user_id, data, callback){
+	exports.upload_user_data = function(data,callback){
 
 		var baseUrl = 'http://api.artifacia.com/v1/users/'+user_id+'/purchased_items';
 		var headers = {
@@ -118,7 +116,7 @@ exports.artifacia = function(username, password, callback){
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
 			// console.log('Status: ', response.statusCode);
-			 console.log(body);
+			 // console.log(body);
 			 ret = body;
 			 callback(ret)
 		});
@@ -126,7 +124,7 @@ exports.artifacia = function(username, password, callback){
 
 	exports.get_visual_recommendation = function(prod_id, callback){
 
-		console.log(prod_id);
+		// console.log(prod_id);
 
 		var baseUrl = 'http://api.artifacia.com/v1/recommendation/similar/'+prod_id;
 		var headers = {
@@ -156,7 +154,7 @@ exports.artifacia = function(username, password, callback){
 
 	exports.get_cpr_recommendation = function(prod_id, callback){
 
-		console.log(prod_id);
+		// console.log(prod_id);
 
 		var baseUrl = 'http://api.artifacia.com/v1/recommendation/collections/'+prod_id;
 		var headers = {
@@ -185,7 +183,7 @@ exports.artifacia = function(username, password, callback){
 	}
 	exports.get_smart_recommendation = function(user_id, callback){
 
-		console.log(prod_id);
+		// console.log(prod_id);
 
 		var baseUrl = 'http://api.artifacia.com/v1/recommendation/users/'+user_id;
 		var headers = {
