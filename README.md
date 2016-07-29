@@ -37,7 +37,7 @@ client.upload_item_data(sample_data,function(result){console.log(result)});
 ```
 
 ### Performing Visual Recommendation
-Once you receive a notification form us about the status of the indexed data, you are ready to search.
+Once you receive a notification from us about the status of the indexed data, you are ready to search.
 You can search for a product ID indexed in the sample data you inserted/uploaded.
 
 ```javascript
