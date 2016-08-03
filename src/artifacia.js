@@ -122,11 +122,11 @@ exports.artifacia = function(username, password, callback){
 		});
 	}
 
-	exports.get_visual_recommendation = function(prod_id, callback){
+	exports.get_visual_recommendation = function(prod_id, num, callback){
 
 		// console.log(prod_id);
 
-		var baseUrl = 'http://api.artifacia.com/v1/recommendation/similar/'+prod_id;
+		var baseUrl = 'http://api.artifacia.com/v1/recommendation/similar/'+prod_id+'/'+num;
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -152,11 +152,11 @@ exports.artifacia = function(username, password, callback){
 		});
 	}
 
-	exports.get_cpr_recommendation = function(prod_id, callback){
+	exports.get_cpr_recommendation = function(prod_id, num, callback){
 
 		// console.log(prod_id);
 
-		var baseUrl = 'http://api.artifacia.com/v1/recommendation/collections/'+prod_id;
+		var baseUrl = 'http://api.artifacia.com/v1/recommendation/collections/'+prod_id+'/'+num;
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -181,11 +181,11 @@ exports.artifacia = function(username, password, callback){
 			callback(ret)
 		});
 	}
-	exports.get_smart_recommendation = function(user_id, callback){
+	exports.get_personalized_recommendation = function(user_id, num, callback){
 
 		// console.log(prod_id);
 
-		var baseUrl = 'http://api.artifacia.com/v1/recommendation/users/'+user_id;
+		var baseUrl = 'http://api.artifacia.com/v1/recommendation/users/'+user_id+'/'+num;
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
