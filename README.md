@@ -6,7 +6,7 @@ The wrapper allows you to create your own index of images on which you would lik
 
 * Visual Recommendation
 * Cross Product Recommendation
-* Smart Recommendation
+* Personalized Recommendation
 
 ## Installation
 
@@ -42,5 +42,6 @@ You can search for a product ID indexed in the sample data you inserted/uploaded
 
 ```javascript
 var sample_prod_id = 2709;
-client.get_visual_recommendation(sample_prod_id,function(result){console.log(result)});
+var num = 4;
+client.get_visual_recommendation(sample_prod_id,num,function(result){console.log(result)});
 ```
