@@ -8,7 +8,7 @@ exports.artifacia = function(username, password, callback){
 	var ret;
 	exports.upload_user_purchased_items = function(user_id,data,callback){
 
-		var baseUrl = 'http://api.artifacia.com/v1/users/'+user_id+'/purchased_items';
+		var baseUrl = 'https://api.artifacia.com/v1/users/'+user_id+'/purchased_items';
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -37,7 +37,7 @@ exports.artifacia = function(username, password, callback){
 
 	exports.upload_user_viewed_items = function(user_id, data, callback){
 
-		var baseUrl = 'http://api.artifacia.com/v1/users/'+user_id+'/viewed_items';
+		var baseUrl = 'https://api.artifacia.com/v1/users/'+user_id+'/viewed_items';
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -66,7 +66,7 @@ exports.artifacia = function(username, password, callback){
 
 	exports.upload_item_data = function(data, callback){
 
-		var baseUrl = 'http://api.artifacia.com/v1/items';
+		var baseUrl = 'https://api.artifacia.com/v1/items';
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -95,7 +95,7 @@ exports.artifacia = function(username, password, callback){
 
 	exports.delete_item_data = function(data, callback){
 
-		var baseUrl = 'http://api.artifacia.com/v1/items';
+		var baseUrl = 'https://api.artifacia.com/v1/items';
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -126,7 +126,7 @@ exports.artifacia = function(username, password, callback){
 
 		// console.log(prod_id);
 
-		var baseUrl = 'http://api.artifacia.com/v1/recommendation/similar/'+prod_id;
+		var baseUrl = 'https://api.artifacia.com/v1/recommendation/similar/'+prod_id;
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -156,7 +156,7 @@ exports.artifacia = function(username, password, callback){
 
 		// console.log(prod_id);
 
-		var baseUrl = 'http://api.artifacia.com/v1/recommendation/collections/'+prod_id;
+		var baseUrl = 'https://api.artifacia.com/v1/recommendation/collections/'+prod_id;
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
@@ -185,7 +185,7 @@ exports.artifacia = function(username, password, callback){
 
 		// console.log(prod_id);
 
-		var baseUrl = 'http://api.artifacia.com/v1/recommendation/users/'+user_id;
+		var baseUrl = 'https://api.artifacia.com/v1/recommendation/users/'+user_id;
 		var headers = {
 			'Content-Type' : 'application/json'
 		};
