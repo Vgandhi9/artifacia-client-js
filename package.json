@@ -1,6 +1,6 @@
 {
   "name": "artifacia",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A javascript client to integrate visual recommendation feature from Artifacia API",
   "main": "src/artifacia.js",
   "dependencies": {
