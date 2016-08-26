@@ -24,7 +24,8 @@ exports.artifacia = function(username, password, callback){
 			method: 'POST',
 			json: true,
 			body: data,
-			auth: authorise
+			auth: authorise,
+			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
@@ -53,7 +54,8 @@ exports.artifacia = function(username, password, callback){
 			method: 'POST',
 			json: true,
 			body: data,
-			auth: authorise
+			auth: authorise,
+			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
@@ -82,7 +84,8 @@ exports.artifacia = function(username, password, callback){
 			method: 'POST',
 			json: true,
 			body: data,
-			auth: authorise
+			auth: authorise,
+			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
@@ -111,7 +114,8 @@ exports.artifacia = function(username, password, callback){
 			method: 'DELETE',
 			json: true,
 			body: data,
-			auth: authorise
+			auth: authorise,
+			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
@@ -142,7 +146,8 @@ exports.artifacia = function(username, password, callback){
 			headers: headers,
 			method: 'GET',
 			json: true,
-			auth: authorise
+			auth: authorise,
+			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
@@ -173,7 +178,8 @@ exports.artifacia = function(username, password, callback){
 			headers: headers,
 			method: 'GET',
 			json: true,
-			auth: authorise
+			auth: authorise,
+			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
@@ -203,7 +209,8 @@ exports.artifacia = function(username, password, callback){
 			headers: headers,
 			method: 'GET',
 			json: true,
-			auth: authorise
+			auth: authorise,
+			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
 			// console.log('Error: ', error);
