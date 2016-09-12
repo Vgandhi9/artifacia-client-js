@@ -23,9 +23,8 @@ The API is really easy and simple to use. First you need to visit [this](http://
 ```javascript
 "use strict";
 var client = require("artifacia");
-var username = "dummy";
-var password = "abcd1234";
-client.artifacia(username, password);
+var api_key = <api_key>;
+client.artifacia(api_key);
 ```
 
 ### Creating your index
@@ -38,10 +37,11 @@ client.upload_item_data(sample_data,function(result){console.log(result)});
 
 ### Performing Visual Recommendation
 Once you receive a notification from us about the status of the indexed data, you are ready to search.
-You can search for a product ID indexed in the sample data you inserted/uploaded.
+You can search for a product ID indexed in the sample data you inserted/uploaded. And also you can specify the number to results to be returned as well as you can set attribute if you want to prioritize the result on the basis of tags like color, material, pattern etc as given below.
 
 ```javascript
 var sample_prod_id = 2709;
 var num = 4;
-client.get_visual_recommendation(sample_prod_id,num,function(result){console.log(result)});
+var filters = {'color':1, 'pattern':1};
+client.get_visual_recommendation(sample_prod_id,num,filters,function(result){console.log(result)});
 ```

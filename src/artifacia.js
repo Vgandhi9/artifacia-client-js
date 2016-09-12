@@ -3,19 +3,15 @@ var request = require('request');
 
 // module.exports = artifacia;
 
-exports.artifacia = function(username, password, callback){
+exports.artifacia = function(api_key, callback){
 
 	var ret;
 	exports.upload_user_purchased_items = function(user_id,data,callback){
 
 		var baseUrl = 'https://api.artifacia.com/v1/users/'+user_id+'/purchased_items';
 		var headers = {
-			'Content-Type' : 'application/json'
-		};
-
-		var authorise = {
-			user: username,
-			pass: password
+			'Content-Type' : 'application/json',
+			'api_key' : api_key
 		};
 
 		var options = {
@@ -24,7 +20,6 @@ exports.artifacia = function(username, password, callback){
 			method: 'POST',
 			json: true,
 			body: data,
-			auth: authorise,
 			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
@@ -40,13 +35,10 @@ exports.artifacia = function(username, password, callback){
 
 		var baseUrl = 'https://api.artifacia.com/v1/users/'+user_id+'/viewed_items';
 		var headers = {
-			'Content-Type' : 'application/json'
+			'Content-Type' : 'application/json',
+			'api_key' : api_key
 		};
 
-		var authorise = {
-			user: username,
-			pass: password
-		};
 
 		var options = {
 			url: baseUrl,
@@ -54,7 +46,6 @@ exports.artifacia = function(username, password, callback){
 			method: 'POST',
 			json: true,
 			body: data,
-			auth: authorise,
 			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
@@ -70,12 +61,8 @@ exports.artifacia = function(username, password, callback){
 
 		var baseUrl = 'https://api.artifacia.com/v1/items';
 		var headers = {
-			'Content-Type' : 'application/json'
-		};
-
-		var authorise = {
-			user: username,
-			pass: password
+			'Content-Type' : 'application/json',
+			'api_key' : api_key
 		};
 
 		var options = {
@@ -84,7 +71,6 @@ exports.artifacia = function(username, password, callback){
 			method: 'POST',
 			json: true,
 			body: data,
-			auth: authorise,
 			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
@@ -100,12 +86,8 @@ exports.artifacia = function(username, password, callback){
 
 		var baseUrl = 'https://api.artifacia.com/v1/items';
 		var headers = {
-			'Content-Type' : 'application/json'
-		};
-
-		var authorise = {
-			user: username,
-			pass: password
+			'Content-Type' : 'application/json',
+			'api_key' : api_key
 		};
 
 		var options = {
@@ -114,7 +96,6 @@ exports.artifacia = function(username, password, callback){
 			method: 'DELETE',
 			json: true,
 			body: data,
-			auth: authorise,
 			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
@@ -126,19 +107,17 @@ exports.artifacia = function(username, password, callback){
 		});
 	}
 
-	exports.get_visual_recommendation = function(prod_id, num, callback){
+	exports.get_visual_recommendation = function(prod_id, num, filters, callback){
 
 		// console.log(prod_id);
 
-		var baseUrl = 'https://api.artifacia.com/v1/recommendation/similar/'+prod_id+'/'+num;
-
+		var baseUrl = 'https://api.artifacia.com/v1/recommendation/similar/'+prod_id+'/'+num+'?';
+		for (var key in filters){
+			baseUrl = baseUrl+key+'='+filters[key]+'&'
+		}
 		var headers = {
-			'Content-Type' : 'application/json'
-		};
-
-		var authorise = {
-			user: username,
-			pass: password
+			'Content-Type' : 'application/json',
+			'api_key' : api_key
 		};
 
 		var options = {
@@ -146,7 +125,6 @@ exports.artifacia = function(username, password, callback){
 			headers: headers,
 			method: 'GET',
 			json: true,
-			auth: authorise,
 			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
@@ -165,12 +143,8 @@ exports.artifacia = function(username, password, callback){
 		var baseUrl = 'https://api.artifacia.com/v1/recommendation/collections/'+prod_id+'/'+num;
 
 		var headers = {
-			'Content-Type' : 'application/json'
-		};
-
-		var authorise = {
-			user: username,
-			pass: password
+			'Content-Type' : 'application/json',
+			'api_key' : api_key
 		};
 
 		var options = {
@@ -178,7 +152,6 @@ exports.artifacia = function(username, password, callback){
 			headers: headers,
 			method: 'GET',
 			json: true,
-			auth: authorise,
 			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
@@ -196,12 +169,8 @@ exports.artifacia = function(username, password, callback){
 		var baseUrl = 'https://api.artifacia.com/v1/recommendation/users/'+user_id+'/'+num;
 
 		var headers = {
-			'Content-Type' : 'application/json'
-		};
-
-		var authorise = {
-			user: username,
-			pass: password
+			'Content-Type' : 'application/json',
+			'api_key' : api_key
 		};
 
 		var options = {
@@ -209,7 +178,6 @@ exports.artifacia = function(username, password, callback){
 			headers: headers,
 			method: 'GET',
 			json: true,
-			auth: authorise,
 			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
