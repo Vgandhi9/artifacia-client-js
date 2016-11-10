@@ -107,14 +107,11 @@ exports.artifacia = function(api_key, callback){
 		});
 	}
 
-	exports.get_visual_recommendation = function(prod_id, num, filters, callback){
+	exports.get_visual_recommendation = function(prod_id, num, filters = {}, callback){
 
 		// console.log(prod_id);
 
-		var baseUrl = 'https://api.artifacia.com/v1/recommendation/similar/'+prod_id+'/'+num+'?';
-		for (var key in filters){
-			baseUrl = baseUrl+key+'='+filters[key]+'&'
-		}
+		var baseUrl = 'https://api.artifacia.com/v1/recommendation/similar/'+prod_id+'/'+num;
 		var headers = {
 			'Content-Type' : 'application/json',
 			'api_key' : api_key
@@ -123,8 +120,9 @@ exports.artifacia = function(api_key, callback){
 		var options = {
 			url: baseUrl,
 			headers: headers,
-			method: 'GET',
+			method: 'POST',
 			json: true,
+			body: {"filters":filters},
 			rejectUnauthorized: false
 		};
 		request(options, function (error, response, body) {
